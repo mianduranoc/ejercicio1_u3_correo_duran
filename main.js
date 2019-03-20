@@ -206,9 +206,9 @@ userRouter.get("/",(req,res)=>{
             })
         });
 });
-userRouter.get("/:id",(req,res)=>{
-    const id=req.params.id;
-    User.findOne({_id:id})
+userRouter.get("/:email",(req,res)=>{
+    const email=req.params.email;
+    User.findOne({email:email})
         .then(data=>{
             res.status(200);
             res.json({
